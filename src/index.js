@@ -8,9 +8,9 @@ function map(n, start1, stop1, start2, stop2) {
 };
 
 
-const piecewiseEasing =
-module.exports.piecewiseEasing =
-function piecewiseEasing(pieces) {
+const easing =
+module.exports.easing =
+function easing(pieces) {
 	return (t) => {
 		// find the right piece for `t`
 		const piece = R.find(
@@ -29,8 +29,8 @@ function piecewiseEasing(pieces) {
 
 		const mappedT = map(
 			t,
-			piece.tInterval[0], piece.tInterval[1],
-			tMap[0], tMap[1]
+			...piece.tInterval,
+			...tMap
 		);
 
 		return piece.easingFn(mappedT);

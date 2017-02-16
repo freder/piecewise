@@ -10,6 +10,6 @@
     "ramda": "^0.23.0"
   },
   "scripts": {
-    "test": "ava ./tests/"
+    "test": "ava ./tests"
   }
 }
