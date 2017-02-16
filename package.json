@@ -1,5 +1,15 @@
 {
   "name": "@freder/piecewise",
-  "version": "0.0.0",
-  "main": "src/index.js"
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "devDependencies": {
+    "ava": "^0.18.1",
+    "eslint-config-airbnb-base": "^11.1.0"
+  },
+  "dependencies": {
+    "ramda": "^0.23.0"
+  },
+  "scripts": {
+    "test": "ava ./tests"
+  }
 }
