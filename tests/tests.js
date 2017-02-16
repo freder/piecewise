@@ -12,7 +12,7 @@ function always(b) {
 }
 
 
-test('foo', t => {
+test('easing', t => {
 	const piecewiseEasingFn = piecewise.easing([
 		{
 			tInterval: [0, 0.5],
