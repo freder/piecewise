@@ -1,6 +1,9 @@
 const R = require('ramda');
 
 
+module.exports.visualization = require('./visualization.js');
+
+
 const map =
 module.exports.map =
 function map(n, start1, stop1, start2, stop2) {
