@@ -36,3 +36,10 @@ function easing(pieces) {
 		return piece.easingFn(mappedT);
 	};
 };
+
+
+const envelope =
+module.exports.envelope =
+function envelope(envelopeFn, easingFn) {
+	return (t) => (envelopeFn(t) * easingFn(t));
+};
