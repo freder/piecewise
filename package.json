@@ -4,6 +4,7 @@
   "main": "src/index.js",
   "devDependencies": {
     "ava": "^0.18.1",
+    "canvas": "^1.6.3",
     "eslint-config-airbnb-base": "^11.1.0"
   },
   "dependencies": {
