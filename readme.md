@@ -3,6 +3,17 @@
 a library for creating composable easing and envelope functions.
 
 
+## installation
+
+```
+# yarn
+yarn add @freder/piecewise
+
+# npm
+npm install --save @freder/piecewise
+```
+
+
 ## example: easing function
 
 ```javascript
