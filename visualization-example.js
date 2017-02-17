@@ -48,8 +48,8 @@ const canvas = new Canvas(
 )
 const ctx = canvas.getContext('2d');
 
-
-let opts = {
+let opts = {};
+opts = {
 	lineColor: 'rgb(0, 0, 0)',
 	lineWidth: 5,
 };
