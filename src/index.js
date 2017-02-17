@@ -1,6 +1,9 @@
 const R = require('ramda');
 
 
+module.exports.visualization = require('./visualization.js');
+
+
 const map =
 module.exports.map =
 function map(n, start1, stop1, start2, stop2) {
@@ -35,4 +38,11 @@ function easing(pieces) {
 
 		return piece.easingFn(mappedT);
 	};
+};
+
+
+const envelope =
+module.exports.envelope =
+function envelope(envelopeFn, easingFn) {
+	return (t) => (envelopeFn(t) * easingFn(t));
 };
