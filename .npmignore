@@ -2,3 +2,7 @@ src/
 images/
 yarn.lock
 visualization-example.js
+.babelrc
+.editorconfig
+.eslintrc
+.npmignore
