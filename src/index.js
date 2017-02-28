@@ -46,3 +46,14 @@ module.exports.envelope =
 function envelope(envelopeFn, easingFn) {
 	return (t) => (envelopeFn(t) * easingFn(t));
 };
+
+
+const crossfade =
+module.exports.crossfade =
+function crossfade(f1, f2) {
+	return (t) => {
+		const c1 = f1(t) * (1 - t);
+		const c2 = f2(t) * t;
+		return c1 + c2;
+	};
+};
