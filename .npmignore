@@ -2,6 +2,7 @@ src/
 images/
 yarn.lock
 visualization-example.js
+visualize.js
 .babelrc
 .editorconfig
 .eslintrc
