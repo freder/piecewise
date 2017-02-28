@@ -50,10 +50,11 @@ function envelope(envelopeFn, easingFn) {
 
 const crossfade =
 module.exports.crossfade =
-function crossfade(f1, f2) {
+function crossfade(easingFn, f1, f2) {
 	return (t) => {
-		const c1 = f1(t) * (1 - t);
-		const c2 = f2(t) * t;
+		const easingT = easingFn(t);
+		const c1 = f1(t) * (1 - easingT);
+		const c2 = f2(t) * easingT;
 		return c1 + c2;
 	};
 };

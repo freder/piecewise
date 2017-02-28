@@ -34,9 +34,10 @@ test('easing — should create new piecewise defined function', () => {
 
 
 test('crossfade — should mix two functions', () => {
+	const easingFn = R.identity;
 	const f1 = R.always(1);
 	const f2 = R.always(0);
-	const cf = piecewise.crossfade(f1, f2);
+	const cf = piecewise.crossfade(easingFn, f1, f2);
 
 	expect(cf(0)).toBe(1);
 	expect(cf(0.25)).toBe(0.75);
