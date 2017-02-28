@@ -73,9 +73,44 @@ const finalFn = piecewise.envelope(piecewiseEnvelopeFn, piecewiseEasingFn);
 `envelope` returns the product of the values of an envelope function and an easing function at time `t`.
 
 visualization:<br>
-![](./images/combined.png)<br>
+![](./images/envelope.png)<br>
 grey: easing function<br>
 red: envelope function<br>
+black: resulting function
+
+
+## example: crossfade function
+
+```javascript
+const easingFn = piecewise.easing([
+	{
+		tInterval: [0, 0.6],
+		tMap: [0, 1],
+		easingFn: always(0),
+	},
+	{
+		tInterval: [0.6, 0.8],
+		tMap: [0, 1],
+		easingFn: identity,
+	},
+	{
+		tInterval: [0.8, 1],
+		tMap: [0, 1],
+		easingFn: always(1),
+	},
+]);
+
+const f1 = always(0.75);
+const f2 = always(0.25);
+const finalFn = piecewise.crossfade(easingFn, f1, f2);
+```
+
+`crossfade` mixes two functions and is controlled by `easingFn`.
+
+visualization:<br>
+![](./images/crossfade.png)<br>
+grey: f1, f2<br>
+red: easing function<br>
 black: resulting function
 
 
