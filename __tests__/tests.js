@@ -1,5 +1,5 @@
 const R = require('ramda');
-const piecewise = require('../');
+const piecewise = require('../src/index.js');
 
 
 test('easing — should create new piecewise defined function', () => {
@@ -33,6 +33,15 @@ test('easing — should create new piecewise defined function', () => {
 });
 
 
-// test('fails', () => {
-// 	expect(false).toBe(true);
-// });
+test('crossfade — should mix two functions', () => {
+	const easingFn = R.identity;
+	const f1 = R.always(1);
+	const f2 = R.always(0);
+	const cf = piecewise.crossfade(easingFn, f1, f2);
+
+	expect(cf(0)).toBe(1);
+	expect(cf(0.25)).toBe(0.75);
+	expect(cf(0.5)).toBe(0.5);
+	expect(cf(0.75)).toBe(0.25);
+	expect(cf(1)).toBe(0);
+});

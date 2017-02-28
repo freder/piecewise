@@ -22,11 +22,15 @@ function plotFunction(ctx, opts, fn) {
 
 	let t = 0;
 	ctx.beginPath();
-	ctx.moveTo(padding, padding + height);
+	ctx.moveTo(
+		padding,
+		padding + height - (fn(0) * height)
+	);
 	while (t <= 1) {
 		ctx.lineTo(
 			padding + (t * width),
-			padding + height - (fn(t) * height));
+			padding + height - (fn(t) * height)
+		);
 		t += step;
 	}
 	ctx.stroke();
