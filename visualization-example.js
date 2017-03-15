@@ -45,7 +45,7 @@ const width = 500;
 const canvas = new Canvas(
 	(2 * padding) + width,
 	(2 * padding) + height
-)
+);
 const ctx = canvas.getContext('2d');
 
 let opts = {};
