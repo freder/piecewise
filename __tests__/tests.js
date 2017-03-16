@@ -71,3 +71,12 @@ test('crossfade() — should mix two functions', () => {
 	expect(cf(0.75)).toBe(0.25);
 	expect(cf(1)).toBe(0);
 });
+
+
+test('mix() — should mix two functions', () => {
+	const f1 = R.always(1);
+	const f2 = R.always(0);
+	const mixed = piecewise.mix(f1, f2, 0.25);
+
+	expect(mixed(0.1)).toBe(0.25);
+});

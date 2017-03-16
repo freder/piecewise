@@ -49,6 +49,17 @@ function envelope(envelopeFn, easingFn) {
 };
 
 
+const mix =
+module.exports.mix =
+function mix(fn1, fn2, fraction) {
+	return (t) => {
+		const a = fn1(t) * fraction;
+		const b = fn2(t) * (1 - fraction);
+		return (a + b);
+	};
+};
+
+
 const crossfade =
 module.exports.crossfade =
 function crossfade(easingFn, f1, f2) {
