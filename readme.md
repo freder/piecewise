@@ -14,7 +14,7 @@ npm install --save @freder/piecewise
 ```
 
 
-## example: easing function
+## example: `easing` function
 
 ```javascript
 const piecewise = require('@freder/piecewise');
@@ -51,7 +51,7 @@ visualization:<br>
 ![](./images/easing.png)
 
 
-## example: envelope function
+## example: `envelope` function
 
 ```javascript
 const piecewiseEnvelopeFn = piecewise.easing([
@@ -79,7 +79,23 @@ red: envelope function<br>
 black: resulting function
 
 
-## example: crossfade function
+## example: `mix` function
+
+```javascript
+const f1 = identity;
+const f2 = always(1);
+const finalFn = piecewise.mix(f1, f2, 0.7);
+```
+
+`mix` returns a new function that calculates the weighted mean of two functions at time `t`.
+
+visualization:<br>
+![](./images/mix.png)<br>
+grey: f1, f2<br>
+black: resulting function
+
+
+## example: `crossfade` function
 
 ```javascript
 const easingFn = piecewise.easing([
