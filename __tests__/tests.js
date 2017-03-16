@@ -1,3 +1,5 @@
+/* global test: true */
+/* global expect: true */
 const R = require('ramda');
 const piecewise = require('../src/index.js');
 
