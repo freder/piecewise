@@ -2,7 +2,7 @@ const R = require('ramda');
 const piecewise = require('../src/index.js');
 
 
-test('easing — should create new piecewise defined function', () => {
+test('easing() — should create new piecewise defined function', () => {
 	const piecewiseEasingFn = piecewise.easing([
 		{
 			tInterval: [0, 0.5],
@@ -33,7 +33,7 @@ test('easing — should create new piecewise defined function', () => {
 });
 
 
-test('envelope — should shape another function', () => {
+test('envelope() — should shape another function', () => {
 	const easingFn = R.always(1);
 	const envelopeFn = piecewise.easing([
 		{
@@ -57,7 +57,7 @@ test('envelope — should shape another function', () => {
 });
 
 
-test('crossfade — should mix two functions', () => {
+test('crossfade() — should mix two functions', () => {
 	const easingFn = R.identity;
 	const f1 = R.always(1);
 	const f2 = R.always(0);
