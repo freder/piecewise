@@ -49,13 +49,23 @@ function envelope(envelopeFn, easingFn) {
 };
 
 
+const mix =
+module.exports.mix =
+function mix(fn1, fn2, fraction) {
+	return (t) => {
+		const a = fn1(t) * fraction;
+		const b = fn2(t) * (1 - fraction);
+		return (a + b);
+	};
+};
+
+
 const crossfade =
 module.exports.crossfade =
-function crossfade(easingFn, f1, f2) {
+function crossfade(easingFn, fn1, fn2) {
 	return (t) => {
 		const easingT = easingFn(t);
-		const c1 = f1(t) * (1 - easingT);
-		const c2 = f2(t) * easingT;
-		return c1 + c2;
+		const mixFn = mix(fn1, fn2, (1 - easingT));
+		return mixFn(t);
 	};
 };
