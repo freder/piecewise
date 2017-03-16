@@ -117,3 +117,15 @@ black: resulting function
 ## visualization
 
 → [visualization-example.js](./visualization-example.js)
+
+
+## utility functions
+
+```javascript
+const easing = require('easing-js');
+const { utils } = require('@freder/piecewise');
+
+// wrap easing-js function to only be a function of `t`:
+const wrappedEasingFn = utils.wrapEasingJsFunction(easing.linear);
+wrappedEasingFn(0.7); // → 0.7
+```

@@ -2,6 +2,7 @@ const R = require('ramda');
 
 
 module.exports.visualization = require('./visualization.js');
+module.exports.utils = require('./utils.js');
 
 
 const map =
